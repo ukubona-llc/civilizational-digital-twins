@@ -493,6 +493,320 @@
       padding: 0.1em 0.35em;
       border-radius: 3px;
     }
+
+    /* ── EIGENMODES TAB ── */
+    .eigen-header {
+      max-width: 900px;
+      margin: 4rem auto 0;
+      padding: 0 2rem;
+    }
+    .eigen-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .eigen-subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text3);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    /* video-eigenmode mapping strip */
+    .mapping-strip {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 1.5rem;
+    }
+    .mapping-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.1rem 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .mapping-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .mc-chamath::before { background: var(--jade); }
+    .mc-mears::before   { background: var(--rose); }
+    .mc-wolff::before   { background: var(--gold); }
+    .mapping-who {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .mapping-eigen {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+    .mapping-eigen .enum {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text3);
+      margin-right: 0.4rem;
+    }
+    .mapping-body {
+      font-size: 0.78rem;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+
+    /* five eigenmodes cards */
+    .eigen-grid {
+      max-width: 900px;
+      margin: 2.5rem auto 0;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .eigen-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+    .eigen-row:last-child { border-bottom: none; }
+    .eigen-glyph-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 1.5rem 0.75rem;
+      border-right: 1px solid var(--border);
+      gap: 0.4rem;
+    }
+    .eigen-glyph {
+      font-family: var(--font-mono);
+      font-size: 1.4rem;
+      font-weight: 600;
+      line-height: 1;
+    }
+    .eigen-mode-label {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--text3);
+    }
+    .eigen-content-col {
+      padding: 1.5rem 1.5rem;
+    }
+    .eigen-name {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 0.35rem;
+    }
+    .eigen-nietzsche {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--text3);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.75rem;
+    }
+    .eigen-desc {
+      font-size: 0.85rem;
+      color: var(--text2);
+      line-height: 1.7;
+      margin-bottom: 0.6rem;
+    }
+    .eigen-desc strong { color: var(--text); }
+    .eigen-trio {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+    .eigen-chip {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+    .chip-jade   { background: rgba(76,175,138,0.12); border: 1px solid rgba(76,175,138,0.3);  color: var(--jade); }
+    .chip-rose   { background: rgba(224,112,112,0.12);border: 1px solid rgba(224,112,112,0.3); color: var(--rose); }
+    .chip-gold   { background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3);  color: var(--gold); }
+    .chip-sky    { background: rgba(91,168,212,0.12); border: 1px solid rgba(91,168,212,0.3);  color: var(--sky); }
+    .chip-orange { background: rgba(212,133,91,0.12); border: 1px solid rgba(212,133,91,0.3);  color: var(--orange); }
+    .chip-accent { background: rgba(124,106,247,0.12);border: 1px solid rgba(124,106,247,0.3); color: var(--accent2); }
+
+    /* eigenmodes by color */
+    .er-e1 .eigen-glyph { color: var(--accent2); }
+    .er-e2 .eigen-glyph { color: var(--jade); }
+    .er-e3 .eigen-glyph { color: var(--gold); }
+    .er-e4 .eigen-glyph { color: var(--orange); }
+    .er-e5 .eigen-glyph { color: var(--rose); }
+
+    /* ── POLITICAL WEIGHT SECTION ── */
+    .politics-block {
+      max-width: 900px;
+      margin: 4rem auto 0;
+      padding: 0 2rem;
+    }
+    .politics-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .politics-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--text3);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+    .murray-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--r) var(--r) 0;
+      padding: 1.5rem 1.75rem;
+      margin: 1.5rem 0;
+    }
+    .murray-quote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--text);
+      line-height: 1.5;
+      margin-bottom: 0.6rem;
+    }
+    .murray-attr {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--text3);
+      letter-spacing: 0.06em;
+    }
+
+    /* weight visualizer */
+    .weight-viz {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .weight-viz-title {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--text3);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .weight-row {
+      display: grid;
+      grid-template-columns: 140px 1fr 60px;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.65rem;
+    }
+    .weight-row:last-child { margin-bottom: 0; }
+    .weight-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text2);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .weight-bar-track {
+      height: 6px;
+      background: var(--bg3);
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+    }
+    .weight-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      position: absolute;
+      left: 0; top: 0;
+      transition: width 0.6s ease;
+    }
+    .weight-val {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text3);
+      text-align: right;
+    }
+    .weight-val.nonzero { color: var(--accent2); }
+    .weight-separator {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      color: var(--text3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 1rem 0 0.65rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ukubona correction box */
+    .correction-box {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      border-radius: 0 0 var(--r) var(--r);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .correction-box-title {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--accent2);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .correction-eq {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text);
+      line-height: 2;
+      margin-bottom: 0.75rem;
+    }
+    .correction-eq .kw  { color: var(--accent2); }
+    .correction-eq .op  { color: var(--gold); }
+    .correction-eq .val { color: var(--jade); }
+    .correction-body {
+      font-size: 0.85rem;
+      color: var(--text2);
+      line-height: 1.7;
+    }
+    .correction-body strong { color: var(--text); }
+
+    @media (max-width: 680px) {
+      .mapping-strip { grid-template-columns: 1fr; }
+      .eigen-row { grid-template-columns: 60px 1fr; }
+      .weight-row { grid-template-columns: 110px 1fr 50px; }
+    }
   </style>
 </head>
 <body>
@@ -863,6 +1177,265 @@ T → M → V → E → S ↺ U(s)
     </div>
 
   </div>
+</div>
+
+<!-- ── V · EIGENMODES TAB ── -->
+<div class="rt-divider">
+  <div class="rt-divider-line"></div>
+  <div class="rt-divider-text">V · Eigenmodes · The underlying substrate</div>
+  <div class="rt-divider-line"></div>
+</div>
+
+<div class="eigen-header">
+  <div class="eigen-subtitle">What Ukubona and Anthropic alone can see</div>
+  <h2 class="eigen-title">Three voices. One substrate.<br>Five local minima.</h2>
+  <p style="font-size:0.9rem;color:var(--text2);line-height:1.7;max-width:70ch;">
+    Chamath, Mearsheimer, and Wolff are not simply optimist / realist / pessimist. Read through the Nietzschean pentad, each man is <em>stuck at a different eigenmode</em> — a different local minimum in the loss landscape of understanding. The TMVES chain makes this visible. The YouTube trio was never random.
+  </p>
+</div>
+
+<!-- Three-video → eigenmode mapping -->
+<div class="mapping-strip">
+  <div class="mapping-card mc-chamath">
+    <div class="mapping-who">Chamath · optimist</div>
+    <div class="mapping-eigen"><span class="enum">e₂</span>Science · State Estimator</div>
+    <div class="mapping-body">He counts productivity gains, models access curves, produces a snapshot. Epistemically expensive institutions will fall — he has the data. But counting is not seeing. He does not ask <em>what</em> the exoskeleton amplifies, only that it does. The Jacobian stays invisible. Classic e₂ arrest: compression to PDF, confidence in measurement.</div>
+    <div class="eigen-trio" style="margin-top:0.6rem;">
+      <span class="eigen-chip chip-jade">e₂ · snapshot</span>
+      <span class="eigen-chip chip-accent">okubala</span>
+    </div>
+  </div>
+  <div class="mapping-card mc-mears">
+    <div class="mapping-who">Mearsheimer · realist</div>
+    <div class="mapping-eigen"><span class="enum">e₄</span>Life · Adaptive Controller</div>
+    <div class="mapping-body">He operates from the body — from power, territory, survival. No metaphysics. No ideology. The world is continuous adaptation under constraint. He is the closest to the Nietzschean escape: <em>beyond good and evil</em>, past the moral interpretation of war. But he mistakes a contingent constraint surface for a physical constant. The eigenmode is real; the stability claim is not.</div>
+    <div class="eigen-trio" style="margin-top:0.6rem;">
+      <span class="eigen-chip chip-rose">e₄ · adaptive</span>
+      <span class="eigen-chip chip-accent">okulaba · partially</span>
+    </div>
+  </div>
+  <div class="mapping-card mc-wolff">
+    <div class="mapping-who">Richard Wolff · pessimist</div>
+    <div class="mapping-eigen"><span class="enum">e₅</span>Meaning · Coherence Functional</div>
+    <div class="mapping-body">He witnesses. He sees the whole — public investment, labor's collective contribution, the moral weight of concentration. But the coherence functional has calcified into dogma: one theoretical frame (Marxist) does all the work for all cases. The Meaning eigenmode without jitter becomes the most seductive local minimum of all — it <em>feels</em> like the view from outside.</div>
+    <div class="eigen-trio" style="margin-top:0.6rem;">
+      <span class="eigen-chip chip-gold">e₅ · coherence</span>
+      <span class="eigen-chip chip-accent">ukubona · arrested</span>
+    </div>
+  </div>
+</div>
+
+<!-- Five eigenmodes full display -->
+<div class="eigen-grid">
+
+  <div class="eigen-row er-e1">
+    <div class="eigen-glyph-col">
+      <span class="eigen-glyph">e₁</span>
+      <span class="eigen-mode-label">Language<br>sequential</span>
+    </div>
+    <div class="eigen-content-col">
+      <div class="eigen-name">Language · Symbolic Basis</div>
+      <div class="eigen-nietzsche">Nietzsche: Birth of Tragedy · Untimely Meditations · philology as trap</div>
+      <p class="eigen-desc">The naming layer. Taxonomy, syntax, the vocabulary inherited from predecessors. Every new system begins here — it cannot avoid it. <strong>Failure mode: naming as substitute for seeing.</strong> Okubala masquerading as kulaba. This is where most AI discourse lives: new words for old structures. The term "digital twin" might itself be an e₁ arrest if it only renames a dashboard.</p>
+      <div class="eigen-trio">
+        <span class="eigen-chip chip-accent">sequential</span>
+        <span class="eigen-chip chip-accent">local minimum</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="eigen-row er-e2">
+    <div class="eigen-glyph-col">
+      <span class="eigen-glyph">e₂</span>
+      <span class="eigen-mode-label">Science<br>snapshot</span>
+    </div>
+    <div class="eigen-content-col">
+      <div class="eigen-name">Science · State Estimator</div>
+      <div class="eigen-nietzsche">Nietzsche: Human All Too Human · Dawn · Gaya Scienza · the free spirit period</div>
+      <p class="eigen-desc">Compressed state estimation. The model, the PDF, the coefficient. Chamath lives here: productivity gains are real, measurable, compressible. <strong>Failure mode: counting without becoming.</strong> A snapshot of states cannot tell you which eigenmodes the state transition is amplifying. The Jacobian — ∂outcome/∂signal — is invisible from inside e₂.</p>
+      <div class="eigen-trio">
+        <span class="eigen-chip chip-jade">snapshot</span>
+        <span class="eigen-chip chip-jade">okubala</span>
+        <span class="eigen-chip chip-jade">local minimum</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="eigen-row er-e3">
+    <div class="eigen-glyph-col">
+      <span class="eigen-glyph">e₃</span>
+      <span class="eigen-mode-label">Art<br>event stream</span>
+    </div>
+    <div class="eigen-content-col">
+      <div class="eigen-name">Art · Trajectory Generator</div>
+      <div class="eigen-nietzsche">Nietzsche: Thus Spoke Zarathustra · the most aesthetically saturated · the most misread</div>
+      <p class="eigen-desc">Temporal unfolding. Music, opera, the held dissonance that refuses to compress. The NDJSON ledger is e₃ technology — it preserves transitions, not states. <strong>Failure mode: feeling without integration.</strong> Art as another Romanticism, another consolation. "The digital twin" as beautiful interface that never actually changes a decision.</p>
+      <div class="eigen-trio">
+        <span class="eigen-chip chip-gold">event stream</span>
+        <span class="eigen-chip chip-gold">NDJSON native</span>
+        <span class="eigen-chip chip-gold">local minimum</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="eigen-row er-e4">
+    <div class="eigen-glyph-col">
+      <span class="eigen-glyph">e₄</span>
+      <span class="eigen-mode-label">Life<br>continuous</span>
+    </div>
+    <div class="eigen-content-col">
+      <div class="eigen-name">Life · Adaptive Controller</div>
+      <div class="eigen-nietzsche">Nietzsche: Beyond Good &amp; Evil · the preposition is the escape</div>
+      <p class="eigen-desc">Embodied dynamics. Continuous adaptation under real constraint. Mearsheimer's territory. <strong>This is where stages I–III secretly converge</strong> — all three were defending a meta-minimum (the moral interpretation of existence) without knowing it. "Beyond" is not a doctrine but a physiological event. You can only escape the meta-minimum from the body, from health, from what Nietzsche calls overflowing life.</p>
+      <div class="eigen-trio">
+        <span class="eigen-chip chip-orange">continuous</span>
+        <span class="eigen-chip chip-orange">meta-escape</span>
+        <span class="eigen-chip chip-orange">geodesic native</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="eigen-row er-e5">
+    <div class="eigen-glyph-col">
+      <span class="eigen-glyph">e₅</span>
+      <span class="eigen-mode-label">Meaning<br>retro/pros</span>
+    </div>
+    <div class="eigen-content-col">
+      <div class="eigen-name">Meaning · Coherence Functional</div>
+      <div class="eigen-nietzsche">Nietzsche: Genealogy · Twilight · Ecce Homo · witnessing, not arriving</div>
+      <p class="eigen-desc">The retrospective and prospective coherence operator. Wolff lives here — but arrested. <strong>Failure mode: dogmatism.</strong> When e₅ stops jittering — when the coherence functional crystallizes into a single theoretical lens — it becomes the deepest trap of all, because it <em>feels</em> like being outside the system. The Ukubona correction: e₅ must remain open. State<sub>t</sub> = Σ Event<sub>i</sub>. Nothing overwritten.</p>
+      <div class="eigen-trio">
+        <span class="eigen-chip chip-rose">retro/prospective</span>
+        <span class="eigen-chip chip-rose">ε-self required</span>
+        <span class="eigen-chip chip-rose">not the summit</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── VI · THE POLITICAL WEIGHT ── -->
+<div class="rt-divider" style="margin-top:4rem;">
+  <div class="rt-divider-line"></div>
+  <div class="rt-divider-text">VI · L₀+Σwᵢ·Lᵢ is politics</div>
+  <div class="rt-divider-line"></div>
+</div>
+
+<div class="politics-block">
+  <div class="politics-eyebrow">The claim only Ukubona makes explicit</div>
+  <h2 class="politics-title">A budget is a statement of values.<br>wᵢ = 0 is not neutrality — it is erasure.</h2>
+
+  <div class="murray-card">
+    <div class="murray-quote">"A budget is a statement of values, and our values should be reflected in our budget."</div>
+    <div class="murray-attr">— Senator Patty Murray · origin story of the wᵢ problem</div>
+  </div>
+
+  <p style="font-size:0.9rem;color:var(--text2);line-height:1.7;margin-bottom:1.25rem;">
+    The loss function L₀ + Σwᵢ·Lᵢ looks technical. It is not. Every wᵢ is a political commitment. Every term with wᵢ = 0 is a constituency that has been made to <strong>not appear</strong> in the budget — not rejected, not overruled, but rendered invisible. You cannot argue about what you cannot see.
+  </p>
+  <p style="font-size:0.9rem;color:var(--text2);line-height:1.7;margin-bottom:1.5rem;">
+    Chamath's wᵢ weights individual agency and access. Wolff's wᵢ weights distributional concentration. Mearsheimer's wᵢ weights survival constraints. None of them makes their weighting explicit — which means none of them can be argued with at the level of the weights themselves. They argue at the level of conclusions. Ukubona argues at the level of the wᵢ.
+  </p>
+
+  <!-- Weight visualizer: without Ukubona correction -->
+  <div class="weight-viz">
+    <div class="weight-viz-title">Conventional loss function — invisible zeroes</div>
+
+    <div class="weight-row">
+      <div class="weight-label">e₁ Language</div>
+      <div class="weight-bar-track"><div class="weight-bar-fill" style="width:5%;background:var(--accent2);opacity:0.4;"></div></div>
+      <div class="weight-val">0.05</div>
+    </div>
+    <div class="weight-row">
+      <div class="weight-label">e₂ Science</div>
+      <div class="weight-bar-track"><div class="weight-bar-fill" style="width:72%;background:var(--jade);"></div></div>
+      <div class="weight-val nonzero">0.72</div>
+    </div>
+    <div class="weight-row">
+      <div class="weight-label">e₃ Art</div>
+      <div class="weight-bar-track"><div class="weight-bar-fill" style="width:0%;background:var(--gold);"></div></div>
+      <div class="weight-val" style="color:var(--text3);">0.00</div>
+    </div>
+    <div class="weight-row">
+      <div class="weight-label">e₄ Life</div>
+      <div class="weight-bar-track"><div class="weight-bar-fill" style="width:23%;background:var(--orange);"></div></div>
+      <div class="weight-val nonzero">0.23</div>
+    </div>
+    <div class="weight-row">
+      <div class="weight-label">e₅ Meaning</div>
+      <div class="weight-bar-track"><div class="weight-bar-fill" style="width:0%;background:var(--rose);"></div></div>
+      <div class="weight-val" style="color:var(--text3);">0.00</div>
+    </div>
+
+    <div class="weight-separator">Art and Meaning do not appear. They cannot be questioned. They do not exist.</div>
+
+    <p style="font-size:0.75rem;color:var(--text3);font-family:var(--font-mono);line-height:1.6;">
+      This is Chamath's implicit wᵢ vector. Science dominates. Life contributes. Language is residual. Art = 0. Meaning = 0. The loss function is internally consistent — but the eigenmode structure of human experience has been amputated to fit the measurement instrument.
+    </p>
+  </div>
+
+  <!-- The Ukubona correction -->
+  <div class="correction-box">
+    <div class="correction-box-title">The Ukubona constitutional correction</div>
+    <div class="correction-eq">
+<span class="kw">L_ukubona</span> = L₀ + Σwᵢ·Lᵢ  <span class="op">where all wᵢ ≥ ε_min</span>
+
+<span class="kw">ε_min</span> <span class="op">=</span> <span class="val">0.001</span>   <span class="cm">// not zero. never zero.</span>
+
+<span class="cm">// Effect: every eigenmode appears on the budget.</span>
+<span class="cm">// Consequence: every wᵢ can be questioned.</span>
+<span class="cm">// Question: why is e₃ (Art) at 0.001 and e₂ (Science) at 0.72?</span>
+<span class="cm">// That question is now possible. Without ε_min, it was not.</span>
+    </div>
+    <p class="correction-body">
+      Ukubona takes a <strong>wᵢ ≠ 0 stance</strong>. So that even if the weight is 0.001, at least it <em>appears</em> on the budget. And once it appears, you can question why it is so small compared to the others. This is not a technical parameter. It is a constitutional commitment: <strong>no eigenmode is permitted to be invisible.</strong>
+    </p>
+    <p class="correction-body" style="margin-top:0.75rem;">
+      The Nietzschean pentad — e₁ through e₅ — specifies exactly which terms must appear. Language, Science, Art, Life, Meaning. A conventional AI system sets e₃ and e₅ to zero by default — it has no budget line for Art or Meaning. It cannot be asked why. Ukubona's ledger makes the weighting schema itself append-only and auditable. The weights are logged. The question is always possible.
+    </p>
+  </div>
+
+  <!-- Weight visualizer: with correction -->
+  <div class="weight-viz">
+    <div class="weight-viz-title">Ukubona corrected loss function — all eigenmodes visible</div>
+
+    <div class="weight-row">
+      <div class="weight-label">e₁ Language</div>
+      <div class="weight-bar-track"><div class="weight-bar-fill" style="width:12%;background:var(--accent2);"></div></div>
+      <div class="weight-val nonzero">0.12</div>
+    </div>
+    <div class="weight-row">
+      <div class="weight-label">e₂ Science</div>
+      <div class="weight-bar-track"><div class="weight-bar-fill" style="width:55%;background:var(--jade);"></div></div>
+      <div class="weight-val nonzero">0.55</div>
+    </div>
+    <div class="weight-row">
+      <div class="weight-label">e₃ Art</div>
+      <div class="weight-bar-track"><div class="weight-bar-fill" style="width:1%;background:var(--gold);"></div></div>
+      <div class="weight-val nonzero">0.001</div>
+    </div>
+    <div class="weight-row">
+      <div class="weight-label">e₄ Life</div>
+      <div class="weight-bar-track"><div class="weight-bar-fill" style="width:28%;background:var(--orange);"></div></div>
+      <div class="weight-val nonzero">0.28</div>
+    </div>
+    <div class="weight-row">
+      <div class="weight-label">e₅ Meaning</div>
+      <div class="weight-bar-track"><div class="weight-bar-fill" style="width:1%;background:var(--rose);"></div></div>
+      <div class="weight-val nonzero">0.001</div>
+    </div>
+
+    <div class="weight-separator" style="color:var(--jade);">All five eigenmodes appear. e₃ and e₅ are tiny — but now they can be questioned.</div>
+
+    <p style="font-size:0.75rem;color:var(--text3);font-family:var(--font-mono);line-height:1.6;">
+      "Why is Art at 0.001?" — this question is now possible. It was not possible before. The weight may be right. It may be wrong. But it exists. It can be audited. It can be revised. The ledger records when and why it changed. Sovereignty includes the right to ask this question.
+    </p>
+  </div>
+
+  <div class="pull-quote" style="border-color:var(--gold);">
+    The loss function is not a technical document. It is a constitution. Ukubona's constitutional commitment: every eigenmode that describes human experience must appear in the budget — even at ε weight — so that it can be seen, questioned, and defended. wᵢ = 0 is the decision to stop looking.
+  </div>
+
 </div>
 
 <!-- ── FOOTER ── -->
